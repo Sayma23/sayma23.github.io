@@ -8,11 +8,11 @@ I am a PhD student in [Department of Computer Science](https://engineering.wayne
 I pronounce my name as SY-muh sul-TAH-nuh.
 
 ## Experience
--Graduate Teaching Assistant, Wayne State University
--Software Engineer, [Reve Systems Ltd](https://www.revesoft.com/)
+- Graduate Teaching Assistant, Wayne State University
+- Software Engineer, [Reve Systems Ltd](https://www.revesoft.com/)
 
 ## Contact
--Email: [sayma@wayne.edu](sayma@wayne.edu)
--Department of Computer Science
+- Email: [sayma@wayne.edu](sayma@wayne.edu)
+- Department of Computer Science
 Wayne State University
 5057 Woodward Ave., Suite# 3105, Detroit, MI 48202
