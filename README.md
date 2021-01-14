@@ -10,6 +10,7 @@ I pronounce my name as SY-muh sul-TAH-nuh.
 
 ## Contact
 Email: [sayma@wayne.edu](sayma@wayne.edu)
+
 Department of Computer Science
 Wayne State University
 5057 Woodward Ave., Suite# 3105, Detroit, MI 48202
