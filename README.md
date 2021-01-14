@@ -9,6 +9,7 @@ I pronounce my name as SY-muh sul-TAH-nuh.
 
 ## Experience
 Graduate Teaching Assistant, Wayne State University
+
 Software Engineer, [Reve Systems Ltd](https://www.revesoft.com/)
 
 ## Contact
