@@ -1,3 +1,7 @@
+
+
+## About
+
 I am a PhD student in [Department of Computer Science](https://engineering.wayne.edu/cs/) at [Wayne State University](https://wayne.edu/). I am working in [SEAL](http://seal.eng.wayne.edu/) lab under supervision of [Dr. Amiangshu Bosu](http://amiangshu.com/). My research focuses on diversity and inclusion in software engineering. My work also spans to the area of code review, social network analysis, software security and empirical software engineering. I have completed my undergrad from [Bangladesh University of Engineering & Technology](https://www.buet.ac.bd/web/).
 
 
