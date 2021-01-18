@@ -32,16 +32,17 @@ a {
     text-decoration: none !important; }
 
 p {
-  margin-bottom: 1.5em; }
+  margin-bottom: 1.5em;
+color: #a926ea;  }
 
 h1, h2, h4, h5, h6 {
-  color: #000;
+  color: #a926ea;
   font-family: Georgia, serif;
   font-weight: 400;
   margin: 0 0 30px 0; }
   
   h3{
-	  color: #000;
+	  color: #a926ea;
 	  font-family: Georgia, serif;
 	  font-weight: 100;
   margin: 0 0 10px 0;}
@@ -85,7 +86,7 @@ figure {
   width: 300px;
   position: fixed;
   z-index: 1001;
-  background: #a926ea;
+  background: #e099ea;
   -webkit-transition: 0.0s;
   -o-transition: 0s;
   transition: 0s; }
