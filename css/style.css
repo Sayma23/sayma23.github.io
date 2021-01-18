@@ -16,7 +16,7 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.8;
-  color: rgba(0, 0, 0, 0.2); }
+  color: rgba(192, 192, 192, 0.8); }
   @media screen and (max-width: 992px) {
     body {
       font-size: 16px; } }
@@ -84,12 +84,11 @@ figure {
   float: left;
   width: 300px;
   position: fixed;
-  overflow-y: scroll;
   z-index: 1001;
-  background: #f2f3f7;
+  background: #d5f4e6;
   -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s; }
+  -o-transition: 0s;
+  transition: 0s; }
   @media screen and (max-width: 768px) {
     #colorlib-aside {
       width: 300px;
