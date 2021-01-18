@@ -22,10 +22,10 @@ body {
       font-size: 16px; } }
 
 a {
-  color: #2c98f0;
+  color: #a926ea;
   -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s; }
+  -o-transition: 0.0s;
+  transition: 0.0s; }
   a:hover, a:active, a:focus {
     color: #2c98f0;
     outline: none;
@@ -85,8 +85,8 @@ figure {
   width: 300px;
   position: fixed;
   z-index: 1001;
-  background: #d5f4e6;
-  -webkit-transition: 0.5s;
+  background: #a926ea;
+  -webkit-transition: 0.0s;
   -o-transition: 0s;
   transition: 0s; }
   @media screen and (max-width: 768px) {
