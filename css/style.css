@@ -14,9 +14,9 @@
 body {
   font-family:  Garamond, serif;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.8;
-  color: rgba(0, 0, 0, 0.7); }
+  color: rgba(0, 0, 0, 0.2); }
   @media screen and (max-width: 992px) {
     body {
       font-size: 16px; } }
@@ -36,12 +36,12 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
   color: #000;
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: Georgia, serif;
   font-weight: 400;
   margin: 0 0 30px 0; }
 
 figure {
-  margin-bottom: 2.5em;
+  margin-bottom: 2 em;
   float: left;
   width: 100%; }
   figure figcaption {
