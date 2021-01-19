@@ -167,11 +167,11 @@ figure {
             -ms-transform: scaleX(0);
             -o-transform: scaleX(0);
             transform: scaleX(0);
-            -webkit-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            -moz-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            -ms-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            -o-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+            -webkit-transition: all 0.0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            -moz-transition: all 0.0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            -ms-transition: all 0.0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            -o-transition: all 0.0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.0s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
           #colorlib-aside #colorlib-main-menu ul li a:hover {
             text-decoration: none;
             color: black; }
@@ -886,9 +886,9 @@ body.offcanvas {
       -ms-transform: scale(1);
       -o-transform: scale(1);
       transform: scale(1);
-      -webkit-transition: 0.3s;
-      -o-transition: 0.3s;
-      transition: 0.3s; }
+      -webkit-transition: 0.0s;
+      -o-transition: 0.0s;
+      transition: 0.0s; }
   .blog-entry .desc h3 {
     font-size: 16px;
     margin-bottom: 25px;
@@ -948,9 +948,9 @@ body.offcanvas {
     right: 0;
     background: #2c98f0;
     opacity: 0;
-    -webkit-transition: 0.3s;
-    -o-transition: 0.3s;
-    transition: 0.3s; }
+    -webkit-transition: 0.0s;
+    -o-transition: 0.0s;
+    transition: 0.0s; }
     .project .desc .con {
       padding: 20px;
       display: block;
@@ -981,12 +981,12 @@ body.offcanvas {
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 1px;
-      -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
-      -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
-      transition: opacity 0.3s, -webkit-transform 0.3s;
-      -o-transition: transform 0.3s, opacity 0.3s;
-      transition: transform 0.3s, opacity 0.3s;
-      transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+      -webkit-transition: -webkit-transform 0.0s, opacity 0.3s;
+      -webkit-transition: opacity 0.3s, -webkit-transform 0.0s;
+      transition: opacity 0.3s, -webkit-transform 0.0s;
+      -o-transition: transform 0.0s, opacity 0.3s;
+      transition: transform 0.0s, opacity 0.3s;
+      transition: transform 0.0s, opacity 0.3s, -webkit-transform 0.0s;
       -webkit-transform: translate3d(0, -15px, 0);
       transform: translate3d(0, -15px, 0);
       margin-bottom: 15px; }
@@ -996,12 +996,12 @@ body.offcanvas {
       display: block;
       color: rgba(255, 255, 255, 0.7);
       font-size: 13px;
-      -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
-      -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
-      transition: opacity 0.3s, -webkit-transform 0.3s;
-      -o-transition: transform 0.3s, opacity 0.3s;
-      transition: transform 0.3s, opacity 0.3s;
-      transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+      -webkit-transition: -webkit-transform 0.0s, opacity 0.3s;
+      -webkit-transition: opacity 0.3s, -webkit-transform 0.0s;
+      transition: opacity 0.3s, -webkit-transform 0.0s;
+      -o-transition: transform 0.0s, opacity 0.3s;
+      transition: transform 0.0s, opacity 0.3s;
+      transition: transform 0.0s, opacity 0.3s, -webkit-transform 0.3s;
       -webkit-transform: translate3d(0, 15px, 0);
       transform: translate3d(0, 15px, 0); }
       .project .desc span a {
@@ -1174,9 +1174,9 @@ body.offcanvas {
   -moz-border-radius: 2px;
   -ms-border-radius: 2px;
   border-radius: 2px;
-  -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.0s;
+  -o-transition: 0.0s;
+  transition: 0.0s;
   padding: 8px 15px !important; }
   .btn.btn-sm {
     padding: 4px 15px !important; }
@@ -1268,9 +1268,9 @@ body.offcanvas {
   background: none;
   border: 2px solid gray;
   font-size: 16px;
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s; }
+  -webkit-transition: 0.0s;
+  -o-transition: 0.0s;
+  transition: 0.0s; }
   .btn-outline:hover, .btn-outline:focus, .btn-outline:active {
     -webkit-box-shadow: none;
     box-shadow: none; }
@@ -1287,9 +1287,9 @@ body.offcanvas {
   height: 54px;
   font-size: 16px;
   font-weight: 400;
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 0.0s;
+  -o-transition: 0.0s;
+  transition: 0.0s;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
@@ -1327,9 +1327,9 @@ body.offcanvas {
     text-transform: uppercase;
     text-indent: -55px;
     background: #000;
-    -webkit-transition: all .2s ease-out;
-    -o-transition: all .2s ease-out;
-    transition: all .2s ease-out; }
+    -webkit-transition: all 0s ease-out;
+    -o-transition: all 0s ease-out;
+    transition: all 0s ease-out; }
     .colorlib-nav-toggle i::before, .colorlib-nav-toggle i::after {
       content: '';
       width: 30px;
@@ -1337,21 +1337,21 @@ body.offcanvas {
       background: #000;
       position: absolute;
       left: 0;
-      -webkit-transition: 0.2s;
-      -o-transition: 0.2s;
-      transition: 0.2s; }
+      -webkit-transition: 0s;
+      -o-transition: 0s;
+      transition: 0s; }
   .colorlib-nav-toggle.dark i {
     position: relative;
     color: #000;
     background: #000;
-    -webkit-transition: all .2s ease-out;
-    -o-transition: all .2s ease-out;
-    transition: all .2s ease-out; }
+    -webkit-transition: all 0s ease-out;
+    -o-transition: all 0s ease-out;
+    transition: all 0s ease-out; }
     .colorlib-nav-toggle.dark i::before, .colorlib-nav-toggle.dark i::after {
       background: #000;
-      -webkit-transition: 0.2s;
-      -o-transition: 0.2s;
-      transition: 0.2s; }
+      -webkit-transition: 0s;
+      -o-transition: 0s;
+      transition: 0s; }
 
 .colorlib-nav-toggle i::before {
   top: -7px; }
@@ -1393,9 +1393,9 @@ body.offcanvas {
   opacity: 1;
   visibility: hidden;
   padding: 20px;
-  -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s; }
+  -webkit-transition: 0s;
+  -o-transition: 0s;
+  transition: 0s; }
   @media screen and (max-width: 768px) {
     .colorlib-nav-toggle {
       opacity: 1;
