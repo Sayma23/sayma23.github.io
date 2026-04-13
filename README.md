@@ -8,6 +8,6 @@ I am a Software Engineering researcher with a Ph.D. in Computer Science, special
 
 ## Contact
 - Email: [ssultana1@wayne.edu](ssultana1@wayne.edu)
-- Department of Computer Science
-Tulane University
+- Department of Computer Science,
+Tulane University,
 Paul Hall, Suite 518, New Orleans, LA 70118
