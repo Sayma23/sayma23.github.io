@@ -2,13 +2,12 @@
 
 ## About
 
-I am a PhD student in [Department of Computer Science](https://engineering.wayne.edu/cs/) at [Wayne State University](https://wayne.edu/). I am working in [SEAL](http://seal.eng.wayne.edu/) lab under the supervision of [Dr. Amiangshu Bosu](http://amiangshu.com/). My research focuses on diversity and inclusion in software engineering. My work also spans to the area of code review, social network analysis, software security and empirical software engineering. I have completed my undergrad from [Bangladesh University of Engineering & Technology](https://www.buet.ac.bd/web/).
-
+I am a Software Engineering researcher with a Ph.D. in Computer Science, specializing at the intersection of software engineering, natural language processing, and human-computer interaction. My research focuses on understanding and mitigating bias in software engineering communities, particularly through the development of AI-driven tools to detect and analyze discriminatory language in developer communications.
 
 
 
 ## Contact
-- Email: [sayma@wayne.edu](sayma@wayne.edu)
+- Email: [ssultana1@wayne.edu](ssultana1@wayne.edu)
 - Department of Computer Science
-Wayne State University
-5057 Woodward Ave., Suite# 3105, Detroit, MI 48202
+Tulane University
+Paul Hall, Suite 518, New Orleans, LA 70118
