@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Misc – Sayma Sultana</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/dae7af0921.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --sidebar-w: 280px;
+      --accent: #32174D;
+      --accent-light: #efe8f5;
+      --sidebar-bg: #32174D;
+      --sidebar-text: #d4bfe8;
+      --sidebar-hover: #ffffff;
+      --body-bg: #f8f9fc;
+      --card-bg: #ffffff;
+      --text-primary: #1a1f2e;
+      --text-secondary: #555e73;
+      --border: #e4e8f0;
+      --radius: 10px;
+      --shadow: 0 2px 12px rgba(0,0,0,.07);
+      --transition: .2s ease;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--body-bg); color: var(--text-primary); line-height: 1.7; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    #wrapper { display: flex; min-height: 100vh; }
+
+    /* ── Sidebar ── */
+    #sidebar {
+      width: var(--sidebar-w);
+      background: var(--sidebar-bg);
+      color: var(--sidebar-text);
+      position: fixed;
+      top: 0; left: 0;
+      height: 100vh;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      padding: 2rem 1.5rem;
+      z-index: 100;
+    }
+
+    .profile-photo {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(255,255,255,.25);
+      display: block;
+      margin: 0 auto 1rem;
+    }
+
+    .sidebar-name { text-align: center; font-size: 1.05rem; font-weight: 600; color: #ffffff; line-height: 1.3; margin-bottom: .25rem; }
+    .sidebar-title { text-align: center; font-size: .78rem; color: #c4a8db; margin-bottom: 1.75rem; }
+
+    .sidebar-divider { border: none; border-top: 1px solid rgba(255,255,255,.2); margin: .75rem 0; }
+
+    nav ul { list-style: none; }
+    nav ul li { margin-bottom: .15rem; }
+    nav ul li a {
+      display: block;
+      padding: .5rem .75rem;
+      border-radius: 6px;
+      font-size: .875rem;
+      font-weight: 500;
+      color: var(--sidebar-text);
+      transition: background var(--transition), color var(--transition);
+    }
+    nav ul li a:hover, nav ul li a.active {
+      background: rgba(255,255,255,.12);
+      color: var(--sidebar-hover);
+      text-decoration: none;
+    }
+
+    #nav-toggle {
+      display: none;
+      position: fixed;
+      top: 1rem; left: 1rem;
+      z-index: 200;
+      background: var(--sidebar-bg);
+      border: 1px solid rgba(255,255,255,.2);
+      color: #ffffff;
+      width: 40px; height: 40px;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── Main ── */
+    #main { margin-left: var(--sidebar-w); flex: 1; padding: 2.5rem 2rem; }
+
+    section { padding: 2rem 0; border-bottom: 1px solid var(--border); }
+    section:last-child { border-bottom: none; }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1.25rem;
+      padding-bottom: .5rem;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+
+    .sub-title {
+      font-size: .8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      color: var(--accent);
+      margin: 1.25rem 0 .75rem;
+    }
+
+    /* ── Book list ── */
+    .book-list { list-style: none; display: flex; flex-direction: column; }
+    .book-item {
+      display: flex;
+      gap: .75rem;
+      align-items: flex-start;
+      padding: .75rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: .9rem;
+      color: var(--text-secondary);
+    }
+    .book-list li:last-child { border-bottom: none; }
+    .book-item i { color: var(--accent); margin-top: .25rem; flex-shrink: 0; }
+    .book-item .book-title { font-weight: 600; color: var(--text-primary); }
+    .book-item .book-author { font-size: .82rem; color: #8a96b0; }
+
+    /* ── Writings list ── */
+    .writing-list { list-style: none; display: flex; flex-direction: column; }
+    .writing-item {
+      display: flex;
+      gap: .75rem;
+      align-items: flex-start;
+      padding: .75rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: .9rem;
+      color: var(--text-secondary);
+    }
+    .writing-list li:last-child { border-bottom: none; }
+    .writing-item i { color: var(--accent); margin-top: .25rem; flex-shrink: 0; }
+    .writing-item .writing-title { font-weight: 600; color: var(--text-primary); }
+    .writing-item .writing-meta { font-size: .82rem; color: #8a96b0; }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      #nav-toggle { display: flex; }
+      #sidebar { transform: translateX(-100%); transition: transform .3s ease; }
+      #sidebar.open { transform: translateX(0); }
+      #main { margin-left: 0; padding: 4.5rem 1.25rem 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<button id="nav-toggle" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+
+<div id="wrapper">
+
+  <aside id="sidebar">
+    <img src="image/Sayma-headshot.jpg" alt="Sayma Sultana" class="profile-photo">
+    <p class="sidebar-name">Sayma Sultana</p>
+    <p class="sidebar-title">Postdoctoral Researcher · Tulane University</p>
+
+    <hr class="sidebar-divider">
+
+    <nav>
+      <ul>
+        <li><a href="index.html"><i class="fas fa-user fa-fw" style="margin-right:.5rem;font-size:.8rem;"></i>About</a></li>
+        <li><a href="index.html#education"><i class="fas fa-graduation-cap fa-fw" style="margin-right:.5rem;font-size:.8rem;"></i>Education</a></li>
+        <li><a href="index.html#publications"><i class="fas fa-file-alt fa-fw" style="margin-right:.5rem;font-size:.8rem;"></i>Publications</a></li>
+        <li><a href="index.html#projects"><i class="fas fa-flask fa-fw" style="margin-right:.5rem;font-size:.8rem;"></i>Research Projects</a></li>
+        <li><a href="index.html#experience"><i class="fas fa-briefcase fa-fw" style="margin-right:.5rem;font-size:.8rem;"></i>Experience</a></li>
+        <li><a href="index.html#news"><i class="fas fa-newspaper fa-fw" style="margin-right:.5rem;font-size:.8rem;"></i>News</a></li>
+        <li><a href="index.html#service"><i class="fas fa-hands-helping fa-fw" style="margin-right:.5rem;font-size:.8rem;"></i>Service</a></li>
+        <li><a href="index.html#contact"><i class="fas fa-envelope fa-fw" style="margin-right:.5rem;font-size:.8rem;"></i>Contact</a></li>
+        <li><a href="misc.html" class="active"><i class="fas fa-star fa-fw" style="margin-right:.5rem;font-size:.8rem;"></i>Misc</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main id="main">
+
+    <!-- Books -->
+    <section id="books">
+      <h2 class="section-title">Books &amp; Readings</h2>
+      <p style="font-size:.9rem;color:var(--text-secondary);margin-bottom:1rem;">
+        A reading list at the intersection of technology, feminism, and society — books that have shaped how I think about my research.
+      </p>
+
+      <ul class="book-list">
+        <li class="book-item">
+          <i class="fas fa-book"></i>
+          <div>
+            <div class="book-title">Lean In: Women, Work, and the Will to Lead</div>
+            <div class="book-author">Sheryl Sandberg</div>
+          </div>
+        </li>
+        <li class="book-item">
+          <i class="fas fa-book"></i>
+          <div>
+            <div class="book-title">The Computer Boys Take Over: Computers, Programmers, and the Politics of Technical Expertise</div>
+            <div class="book-author">Nathan Ensmenger</div>
+          </div>
+        </li>
+        <li class="book-item">
+          <i class="fas fa-book"></i>
+          <div>
+            <div class="book-title">Algorithms of Oppression: How Search Engines Reinforce Racism</div>
+            <div class="book-author">Safiya Umoja Noble</div>
+          </div>
+        </li>
+        <li class="book-item">
+          <i class="fas fa-book"></i>
+          <div>
+            <div class="book-title">We Were Feminists Once: From Riot Grrrl to CoverGirl®, the Buying and Selling of a Political Movement</div>
+            <div class="book-author">Andi Zeisler</div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+
+    <!-- Other Links -->
+    <section id="links">
+      <h2 class="section-title">Other Links &amp; Websites</h2>
+
+      <p class="sub-title">Talks &amp; Videos</p>
+      <ul class="book-list">
+        <li class="book-item">
+          <i class="fas fa-play-circle"></i>
+          <div>
+            <div class="book-title"><a href="https://www.youtube.com/watch?v=fC9da6eqaqg" target="_blank">Teach Girls Bravery, Not Perfection</a></div>
+            <div class="book-author">Reshma Saujani · TED Talk</div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+</div>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const sidebar = document.getElementById('sidebar');
+  toggle.addEventListener('click', () => sidebar.classList.toggle('open'));
+</script>
+
+</body>
+</html>

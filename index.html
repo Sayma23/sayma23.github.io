@@ -1,468 +1,834 @@
-
-<!doctype html>
-<html lang="en" class="no-js">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Sayma Sultana</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<meta name="author" content="" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sayma Sultana</title>
+  <meta name="description" content="Sayma Sultana – PhD Candidate in Computer Science at Wayne State University">
 
-  <!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/dae7af0921.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="favicon.ico">
+  <style>
+    /* ── Reset & Variables ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-	<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
-	
-	
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<!-- Flexslider  -->
-	<link rel="stylesheet" href="css/flexslider.css">
-	<!-- Flaticons  -->
-	<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
+    :root {
+      --sidebar-w: 280px;
+      --accent: #32174D;
+      --accent-light: #efe8f5;
+      --sidebar-bg: #32174D;
+      --sidebar-text: #d4bfe8;
+      --sidebar-hover: #ffffff;
+      --body-bg: #f8f9fc;
+      --card-bg: #ffffff;
+      --text-primary: #1a1f2e;
+      --text-secondary: #555e73;
+      --border: #e4e8f0;
+      --radius: 10px;
+      --shadow: 0 2px 12px rgba(0,0,0,.07);
+      --transition: .2s ease;
+    }
 
-	
-	
-	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    html { scroll-behavior: smooth; font-size: 16px; }
 
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--body-bg);
+      color: var(--text-primary);
+      line-height: 1.7;
+    }
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-    <!-- Custom fonts for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet"> -->
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <!-- <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet"> -->
-    <script src="https://kit.fontawesome.com/dae7af0921.js" crossorigin="anonymous"></script>
-    <!-- <link href="vendor/devicons/css/devicons.min.css" rel="stylesheet"> -->
-    <link href="vendor/academicons/css/academicons.min.css" rel="stylesheet">    
-    <!-- <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet"> -->
+    /* ── Layout ── */
+    #wrapper { display: flex; min-height: 100vh; }
 
-  
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	
-	<![endif]-->
+    /* ── Sidebar ── */
+    #sidebar {
+      width: var(--sidebar-w);
+      background: var(--sidebar-bg);
+      color: var(--sidebar-text);
+      position: fixed;
+      top: 0; left: 0;
+      height: 100vh;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      padding: 2rem 1.5rem;
+      z-index: 100;
+    }
 
+    .profile-photo {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(255,255,255,.25);
+      display: block;
+      margin: 0 auto 1rem;
+    }
 
+    .sidebar-name {
+      text-align: center;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #ffffff;
+      line-height: 1.3;
+      margin-bottom: .25rem;
+    }
+
+    .sidebar-title {
+      text-align: center;
+      font-size: .78rem;
+      color: #c4a8db;
+      margin-bottom: 1.75rem;
+    }
+
+    /* Nav */
+    nav ul { list-style: none; }
+    nav ul li { margin-bottom: .15rem; }
+    nav ul li a {
+      display: block;
+      padding: .5rem .75rem;
+      border-radius: 6px;
+      font-size: .875rem;
+      font-weight: 500;
+      color: var(--sidebar-text);
+      transition: background var(--transition), color var(--transition);
+    }
+    nav ul li a:hover,
+    nav ul li a.active {
+      background: rgba(255,255,255,.12);
+      color: var(--sidebar-hover);
+      text-decoration: none;
+    }
+
+    /* Sidebar divider */
+    .sidebar-divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,.2);
+      margin: .75rem 0;
+    }
+
+    /* Social icons */
+    .social-links {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.25rem;
+    }
+    .social-links::before {
+      content: "Find me →";
+      font-size: .8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .social-links a {
+      font-size: 1.5rem;
+      transition: opacity var(--transition), transform var(--transition);
+      text-decoration: none;
+    }
+    .social-links a:hover {
+      opacity: .7;
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+    .social-links a.icon-scholar  { color: #1a1a1a; }
+    .social-links a.icon-linkedin { color: #0a66c2; }
+    .social-links a.icon-github   { color: #1a1a1a; }
+    .social-links a.icon-twitter  { color: #1d9bf0; }
+
+    /* Hamburger */
+    #nav-toggle {
+      display: none;
+      position: fixed;
+      top: 1rem; left: 1rem;
+      z-index: 200;
+      background: var(--sidebar-bg);
+      border: 1px solid rgba(255,255,255,.2);
+      color: #ffffff;
+      width: 40px; height: 40px;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── Main Content ── */
+    #main {
+      margin-left: var(--sidebar-w);
+      flex: 1;
+      padding: 2.5rem 2rem;
+    }
+
+    /* ── Sections ── */
+    section {
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    section:last-child { border-bottom: none; }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1.25rem;
+      padding-bottom: .5rem;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 2rem;
+    }
+
+    .about-bio p { margin-bottom: .85rem; color: var(--text-secondary); }
+    .about-bio p:first-child { color: var(--text-primary); }
+
+    .pronounce {
+      font-style: italic;
+      font-size: .9rem;
+      color: #8a96b0;
+    }
+
+    /* News card */
+    .news-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      box-shadow: var(--shadow);
+    }
+
+    .news-card h3 {
+      font-size: .9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      color: var(--accent);
+      margin-bottom: .85rem;
+    }
+
+    .news-list { list-style: none; }
+    .news-list li {
+      display: flex;
+      gap: .6rem;
+      font-size: .875rem;
+      color: var(--text-secondary);
+      padding: .45rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .news-list li:last-child { border-bottom: none; }
+    .news-list li i {
+      margin-top: .25rem;
+      color: var(--accent);
+      flex-shrink: 0;
+      font-size: .85rem;
+    }
+    .news-list li a { color: inherit; font-weight: 500; }
+    .news-list li a:hover { color: var(--accent); }
+
+    /* Full news section */
+    .news-full-list { list-style: none; display: flex; flex-direction: column; }
+    .news-full-item {
+      display: flex;
+      gap: .75rem;
+      align-items: flex-start;
+      font-size: .9rem;
+      color: var(--text-secondary);
+      padding: .6rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .news-full-list li:last-child { border-bottom: none; }
+    .news-full-item i {
+      color: var(--accent);
+      margin-top: .25rem;
+      flex-shrink: 0;
+      font-size: .85rem;
+    }
+    .news-full-item a { color: var(--text-primary); font-weight: 500; }
+    .news-full-item a:hover { color: var(--accent); }
+
+    /* Education */
+    .edu-list { list-style: none; display: flex; flex-direction: column; gap: .85rem; }
+    .edu-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: var(--radius);
+      padding: .9rem 1.1rem;
+      box-shadow: var(--shadow);
+    }
+    .edu-item .degree { font-weight: 600; font-size: .95rem; }
+    .edu-item .institution { color: var(--text-secondary); font-size: .875rem; }
+
+    /* Publications */
+    .pub-group-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin: 1.25rem 0 .75rem;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      font-size: .8rem;
+    }
+
+    .pub-list { list-style: none; display: flex; flex-direction: column; }
+    .pub-item {
+      font-size: .9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      padding: .75rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .pub-list li:last-child { border-bottom: none; }
+    .pub-item strong { color: var(--text-primary); }
+    .pub-item .pub-venue {
+      display: inline-block;
+      margin-top: .3rem;
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: .15rem .5rem;
+      border-radius: 4px;
+    }
+
+    /* Projects */
+    .project-list { display: flex; flex-direction: column; gap: 1rem; }
+    .project-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.1rem 1.25rem;
+      box-shadow: var(--shadow);
+    }
+    .project-card h3 {
+      font-size: .95rem;
+      font-weight: 600;
+      margin-bottom: .5rem;
+      color: var(--text-primary);
+    }
+    .project-card p { font-size: .875rem; color: var(--text-secondary); margin-bottom: .5rem; }
+    .project-links { display: flex; gap: .5rem; flex-wrap: wrap; }
+    .project-links a {
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: .2rem .55rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background var(--transition);
+    }
+    .project-links a:hover { background: #dac8ec; }
+
+    /* Experience */
+    .exp-group-title {
+      font-size: .8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      color: var(--text-secondary);
+      margin: 1rem 0 .6rem;
+    }
+    .exp-list { list-style: none; display: flex; flex-direction: column; }
+    .exp-item {
+      font-size: .9rem;
+      color: var(--text-secondary);
+      padding: .55rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .exp-list li:last-child { border-bottom: none; }
+    .exp-item strong { color: var(--text-primary); }
+
+    /* Contact */
+    .contact-grid { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .contact-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      gap: .75rem;
+      align-items: flex-start;
+      min-width: 220px;
+    }
+    .contact-item i {
+      color: var(--accent);
+      font-size: 1.1rem;
+      margin-top: .2rem;
+    }
+    .contact-item .label { font-size: .78rem; color: #8a96b0; margin-bottom: .15rem; text-transform: uppercase; letter-spacing: .05em; }
+    .contact-item .value { font-size: .9rem; color: var(--text-primary); font-weight: 500; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .about-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      #nav-toggle { display: flex; }
+
+      #sidebar {
+        transform: translateX(-100%);
+        transition: transform .3s ease;
+      }
+      #sidebar.open { transform: translateX(0); }
+
+      #main {
+        margin-left: 0;
+        padding: 4.5rem 1.25rem 2rem;
+      }
+    }
+  </style>
 </head>
-<div id="colorlib-page">
-		<div class="container-wrap">
-		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-		<aside id="colorlib-aside" role="complementary" class="border js-fullheight">
-			<div class="text-center">
-			
-			
-				<div class="author-img" style="background-image: url(image/Sayma-headshot.jpg);"></div>
-				
-				
-				
-				
-			</div>
-			
-			<nav id="colorlib-main-menu" role="navigation" class="navbar">
-				<div id="navbar" class="collapse">
-					<ul>
-						
-						<li><a href="#" data-nav-section="about">About</a></li>
-						<li><a href="#" data-nav-section="education">Education</a></li>
-						<li><a href="#" data-nav-section="publications">Publications</a></li>
-						<li><a href="#" data-nav-section="research-projects">Research Projects</a></li>
-						<li><a href="#" data-nav-section="experience">Experience</a></li>
-						<li><a href="#" data-nav-section="contact">Contact</a></li>
-					</ul>
-				</div>
-				
-			</nav>
-			
-			<div class="social-icon-img">
-					<ul>
-						<a href="https://github.com/Sayma23" class="fa fa-github"></a>
-						<!--<a href="https://www.facebook.com/humayras1/" class="fa fa-facebook"></a>-->
-						<a href="https://twitter.com/sultana_says" class="fa fa-twitter"></a>
-						<a href="https://scholar.google.com/citations?user=uPqYflMAAAAJ&hl=en" class="fa fa-google"></a>
-						<a href="https://www.linkedin.com/in/sayma-sultana-0591b3a4/" class="fa fa-linkedin"></a>
-					
-					</ul>
-			</div>
-		
-		</aside>
+<body>
 
+<button id="nav-toggle" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
 
-		<div class="container-fluid p-0" id="colorlib-main">
-		
-	
-			<section class="colorlib-about p-3 p-lg-5 d-flex d-column" data-section="about">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="col-md-12">
-								
-									<div class="about-desc">
-									<h2><font size="5"><strong> Sayma Sultana </strong></font> </h2>  
-					
-									<div class="row mb-5">
-									
-									<div class="col-lg-8 col-md-8 col-sm-12">
-									
-									
-									<p><font size="4">	I am a PhD student in <a href="http://engineering.wayne.edu/cs/"> Department of Computer Science </a>
-				 at <a href="https://wayne.edu/"> Wayne State University</a>. I am working in <a href = "http://seal.eng.wayne.edu/" > SEAL </a>
-				 lab under the supervision of <a href= "http://amiangshu.com/" > Dr. Amiangshu Bosu </a>. My research focuses on diversity and inclusion in software engineering. 
-				 My work also spans to the area of code review, social network analysis, software security and empirical software engineering. 
-				 I have earned BS in Computer Science & Engineering from <a href= " https://www.buet.ac.bd/web/">Bangladesh University of Engineering & Technology </a>.</font></p>
-				 
-				 <p><font size="4"> I pronounce my name as SY-muh sul-TAH-nuh.</font></p>
-				 
-				 
-							</div>
-							
-							<div class="col-lg-4 col-md-10 col-sm-10">
-									
-								
-				 <div class="subheading mb-4 text-primary"><h5>     Recent News</h5></div>
-                	<ul class="fa-ul mb-0 term-list">
-          
-            
-                  	<li class="term-item">
-                  	  <i class="fa-li fas fa-users"></i>
-                      Joined programme committee of <a href="https://conf.researchr.org/track/icse-2025/icse-2025-artifact-evaluation">ICSE 2025, Artifact Evaluation Track </a>
-                      </li>
-                    <li class="term-item">
-                      <i class="fa-li fas fa-paper-plane"></i>
-                      Our paper has been accepted <a href="https://2024.msrconf.org/track/msr-2024-registered-reports?#event-overview"> @MSR 2024, Registered Report Track
-                      </a></li>
+<div id="wrapper">
 
-                  	<li class="term-item">
-                      <i class="fa-li fas fa-paper-plane"></i>
-                      Our paper has been accepted <a href="https://www.petrae.org/docs/petra24-program.pdf">@PETRA 2024</a> </li>
-                    <li class="term-item">
-                      <i class="fa-li fas fa-chalkboard-teacher"></i>
-                      Presented our work <a href="https://conf.researchr.org/home/fse-2023">@ESEC/FSE 2023</a></li>
-                    
-                	</ul>
-            </div>
-				 
-							</div>
-							
-							</div>
-							
-						</div>
-						
-					</div>
-				</div>
-				
-		</section>
-            </div>
-            
-            <div class="container-fluid p-0" id="colorlib-main">
+  <!-- ── Sidebar ── -->
+  <aside id="sidebar">
+    <img src="image/Sayma-headshot.jpg" alt="Sayma Sultana" class="profile-photo">
+    <p class="sidebar-name">Sayma Sultana</p>
+    <p class="sidebar-title">Postdoctoral Researcher · Tulane University</p>
 
-			<section class="colorlib-education" data-section="education">
-			<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="col-md-12">
-									<div class="about-desc">
-			<h2><font size="5"> <strong>Education </strong> </font></h2>
-				<li> <font size="4"> Ph.D. in Computer Science at Wayne State University (Fall 2020 - Spring/Summer 2025) </font></li> 
-				<li> <font size="4"> MS in Computer Science at Wayne State University (Fall 2020 - December 2023) </font></li> 
-				<li> <font size="4"> B.Sc. in Computer Science and Engineering at Bangladesh University of Engineering and Technology 
-				( 2012 - 2017) </font></li>
-		         
-				</div>
-								</div>
-							</div>
-							
-						</div> 
-					</div>
-				</div>
-					
-				
-			</section>
-			
-			</div>
-        
-        <div class="container-fluid p-0" id="colorlib-main">
-			
-			<section class="colorlib-publications" data-section="publications">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="col-md-12">
-									<div class="about-desc">
-										<h2><font size="5"><strong> Publications </strong></font> </h2> 
-										
-										
-										
-										<h6><font size="4" style="color.black">Journal & Conference Papers </font> </h6> 
-										
-										<li> <font size="4"> <strong> S Sultana</strong>, J Sarker, F Israt, R Paul, A Bosu.
-				<a href="https://arxiv.org/abs/2311.08485"> Automated Identification of Sexual Orientation and Gender Identity Discriminatory Texts from Issue Comments</a>
-				ACM Transactions on Software engineering & Methodologies (TOSEM), 2025 (Under major revision)</font></li>
-										<li> <font size="4"> AK Turzo, <strong> S Sultana</strong>, A Bosu.
-				<a href="https://arxiv.org/pdf/2407.04159"> From First Patch to Long-Term Contributor: Evaluating Onboarding Recommendations for OSS Newcomers</a>
-				IEEE Transactions on Software Engineering (TSE), 2025  </font></li>
-										<li> <font size="4"> J Sarker, <strong> S Sultana</strong>, S R. Wilson, A Bosu.
-				<a href="https://arxiv.org/pdf/2210.00139.pdf"> ToxiSpanSE: An Explainable Toxicity Detection in Code Review Comments </a>
-				Empirical Software Engineering (ESEM), 2023 </font></li>
-										<li> <font size="4"> <strong> S Sultana</strong>, AK Turzo, A Bosu.
-				<a href="https://arxiv.org/pdf/2210.00139.pdf"> Code Reviews in  Open Source Projects : How Do Gender Biases Affect Participation and Outcomes?,</a>
-				Empirical Software Engineering (EMSE), 2023 </font></li>
-				
-				
-				<br>
-				
-			
-				
-									<h6><font size="4" style="color.black;">Short Paper & Posters </font> </h6> 
-									
-									<li> <font size="4"> <strong> S Sultana</strong>, MB Kali.
-				<a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=uPqYflMAAAAJ&citation_for_view=uPqYflMAAAAJ:ufrVoPGSRksC"> Exploring ChatGPT for identifying sexism in the communication of software developers</a>
-				17th International Conference on PErvasive Technologies Related to Assistive Environments (PETRA), 2024 </font></li>
-				
-				
-				<li> <font size="4"> <strong> S Sultana</strong>, G Uddin, A Bosu. 
-				<a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=uPqYflMAAAAJ&citation_for_view=uPqYflMAAAAJ:eQOLeE2rZwMC"> Assessing the Influence of Toxic and Gender Discriminatory Communication on Perceptible Diversity in OSS Projects,  </a>
-				21st International Conference on Mining Software Repositories (MSR), Registered Report Track, 2024 </font></li>
-				
-									<li> <font size="4"> <strong> S Sultana</strong>.
-				<a href="https://drive.google.com/file/d/1eS-Vadm1Tqp05gNqlkLobktetaLFBotU/view?usp=sharing"> Identification and Mitigation of Gender Biases to Promote Diversity and Inclusion among Open Source Communities,</a>
-				Doctoral Symposium, 37th IEEE/ACM International Conference on Automated Software Engineering (ASE) 2022, Oakland Center, Michigan, United States </font></li>
-				
-				<li> <font size="4"> <strong> S Sultana</strong>.
-				<a href="https://drive.google.com/file/d/132prQ2bFG4hOoMKCH1W1jw_I9uL5dqAB/view?usp=sharing"> Identifying Sexism and Misogyny in Pull Request Comments,</a>
-				Student Research Competition,37th IEEE/ACM International Conference on Automated Software Engineering (ASE) 2022, Oakland Center, Michigan, United States</font></li>
-				
-										<li> <font size="4"> <strong> S Sultana</strong>, J Sarker, A Bosu.
-				<a href="https://dl.acm.org/doi/pdf/10.1145/3475716.3484189"> A Rubric to Identify Misogynistic and Sexist Texts from Software Developer Communications,</a>
-				Emerging Results and Vision paper,15th ACM/IEEE International Symposium on Empirical Software Engineering and Measurement (ESEM) 2021, Bari, Italy </font></li>
-										<li> <font size="4"> <strong> S Sultana</strong>, A Bosu.
-				<a href="https://arxiv.org/pdf/2108.07774.pdf"> Are Code Review Processes Influenced by the Genders of the Participants?,</a>
-				Registered Report at ICSME 2021 (Virtual Event) 37th International Conference on Software Maintenance and Evolution September 27 - October 1 </font></li>
-										<li> <font size="4"> <strong> S Sultana</strong>, LA Cavaletto, A Bosu.
-				<a href="https://arxiv.org/pdf/2107.00212.pdf"> Identifying the Prevalence of Gender Biases among the Computing Organizations ,</a>
-				8th ACM Celebration of Women in Computing: womENcourage™ 2021, (coordinated from Prague, Czech Republic), 22-24 September, 2021  </font></li>										
-										<li> <font size="4"> Dey R., <strong> Sultana S. </strong>, Razi A., Wisniewski P.J..
-				<a href="https://dl.acm.org/doi/fullHtml/10.1145/3334480.3382900"> Exploring Smart Home Device Use by Airbnb Hosts.</a>
-				CHI Conference on Human Factors in Computing Systems Extended Abstracts, Honolulu, USA, April 2020  </font></li> 
-									
-								
-									</div>
-								</div>
-							</div>
-							
-						</div>
-					</div>
-				</div>
-			</section>
+    <hr class="sidebar-divider">
 
-		</div>
-		
-		<div class="container-fluid p-0" id="colorlib-main">
+    <nav>
+      <ul>
+        <li><a href="#about" class="nav-link active"><i class="fas fa-user fa-fw" style="margin-right:.5rem;font-size:.8rem;"></i>About</a></li>
+        <li><a href="#education" class="nav-link"><i class="fas fa-graduation-cap fa-fw" style="margin-right:.5rem;font-size:.8rem;"></i>Education</a></li>
+        <li><a href="#publications" class="nav-link"><i class="fas fa-file-alt fa-fw" style="margin-right:.5rem;font-size:.8rem;"></i>Publications</a></li>
+        <li><a href="#projects" class="nav-link"><i class="fas fa-flask fa-fw" style="margin-right:.5rem;font-size:.8rem;"></i>Research Projects</a></li>
+        <li><a href="#experience" class="nav-link"><i class="fas fa-briefcase fa-fw" style="margin-right:.5rem;font-size:.8rem;"></i>Experience</a></li>
+        <li><a href="#news" class="nav-link"><i class="fas fa-newspaper fa-fw" style="margin-right:.5rem;font-size:.8rem;"></i>News</a></li>
+        <li><a href="#service" class="nav-link"><i class="fas fa-hands-helping fa-fw" style="margin-right:.5rem;font-size:.8rem;"></i>Service</a></li>
+        <li><a href="#contact" class="nav-link"><i class="fas fa-envelope fa-fw" style="margin-right:.5rem;font-size:.8rem;"></i>Contact</a></li>
+        <li><a href="misc.html" class="nav-link"><i class="fas fa-star fa-fw" style="margin-right:.5rem;font-size:.8rem;"></i>Misc</a></li>
+      </ul>
+    </nav>
 
-			<section class="colorlib-education" data-section="research-projects">
-			<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="col-md-12">
-									<div class="about-desc">
-			<h2><font size="5"> <strong>Research Projects </strong> </font></h2>
-				<li> <font size="4"> <strong>Analyzing Toxicity and Gender Bias Impact on OSS Diversity:</strong> Currently gathering GitHub dataset of pull requests and issue comments 
+  </aside>
+
+  <!-- ── Main Content ── -->
+  <main id="main">
+
+    <!-- About -->
+    <section id="about">
+      <h2 class="section-title">About</h2>
+      <div class="about-grid">
+        <div class="about-bio">
+          <p>
+            I am a Software Engineering researcher with a Ph.D. in Computer Science, specializing at the intersection of
+            <strong>software engineering, natural language processing, and human-computer interaction</strong>. My research
+            focuses on understanding and mitigating bias in software engineering communities, particularly through the
+            development of AI-driven tools to detect and analyze discriminatory language in developer communications. 
+          </p>
+          <p>
+            Currently, I am working as a <strong>Postdoctoral Researcher at Tulane University</strong> under the supervision of
+            <a href="https://hridesh.github.io/">Hridesh Rajan</a>, where I am exploring the role of large language models in content moderation,
+            conversational dynamics, and trust in socio-technical systems. I am particularly interested in designing AI systems
+            that are not only technically robust but also socially responsible and inclusive.
+          </p>
+          <p>
+            I completed my Ph.D. in Computer Science from <a href="https://wayne.edu/">Wayne State University</a>, where I
+            worked in the <a href="http://seal.eng.wayne.edu/">SEAL Lab</a> under the supervision of
+            <a href="http://amiangshu.com/">Amiangshu Bosu</a>, and earned my B.S. in Computer Science &amp; Engineering from
+            <a href="https://www.buet.ac.bd/web/">Bangladesh University of Engineering &amp; Technology</a>.
+          </p>
+          <p class="pronounce">I pronounce my name as SY-muh sul-TAH-nuh.</p>
+
+          <div class="social-links">
+            <a href="https://scholar.google.com/citations?user=uPqYflMAAAAJ&hl=en" target="_blank" title="Google Scholar" class="icon-scholar"><i class="ai ai-google-scholar"></i></a>
+            <a href="https://www.linkedin.com/in/sayma-sultana-0591b3a4/" target="_blank" title="LinkedIn" class="icon-linkedin"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Sayma23" target="_blank" title="GitHub" class="icon-github"><i class="fab fa-github"></i></a>
+            <a href="https://twitter.com/sultana_says" target="_blank" title="Twitter" class="icon-twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="news-card">
+          <h3><i class="fas fa-bell" style="margin-right:.4rem;"></i>Recent News</h3>
+          <ul class="news-list">
+            <li>
+              <i class="fas fa-users"></i>
+              <span>Joined programme committee of <a href="https://conf.researchr.org/track/icse-2025/icse-2025-artifact-evaluation">ICSME 2026, Registered Report Track</a></span>
+            </li>
+            <li>
+              <i class="fas fa-users"></i>
+              <span>Joined programme committee of <a href="https://conf.researchr.org/track/icse-2025/icse-2025-artifact-evaluation">LLMTrust 2026</a></span>
+            </li>
+            <li>
+              <i class="fas fa-users"></i>
+              <span>Joined programme committee of <a href="https://conf.researchr.org/track/icse-2025/icse-2025-artifact-evaluation">MSR 2026</a></span>
+            </li>
+            <li>
+              <i class="fas fa-users"></i>
+              <span>Joined programme committee of <a href="https://conf.researchr.org/track/icse-2025/icse-2025-artifact-evaluation">ICSE 2026 Artifact Evaluation Track</a></span>
+            </li>
+            <li>
+              <i class="fas fa-paper-plane"></i>
+              <span>Paper accepted at <a href="https://www.petrae.org/docs/petra24-program.pdf">TOSEM 2025</a></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+      <h2 class="section-title">Education</h2>
+      <ul class="edu-list">
+        <li class="edu-item">
+          <div class="degree">Ph.D. in Computer Science</div>
+          <div class="institution">Wayne State University &nbsp;·&nbsp; Fall 2020 – Spring/Summer 2025</div>
+        </li>
+        <li class="edu-item">
+          <div class="degree">M.S. in Computer Science</div>
+          <div class="institution">Wayne State University &nbsp;·&nbsp; Fall 2020 – Fall 2023</div>
+        </li>
+        <li class="edu-item">
+          <div class="degree">B.Sc. in Computer Science and Engineering</div>
+          <div class="institution">Bangladesh University of Engineering and Technology &nbsp;·&nbsp; 2012 – 2017</div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications">
+      <h2 class="section-title">Publications</h2>
+
+      <p class="pub-group-title">Journal &amp; Conference Papers</p>
+      <ul class="pub-list">
+        <li class="pub-item">
+          <strong>S Sultana</strong>, L Cavaletto, B Trinkenreich, A Bosu.
+          <a href="https://arxiv.org/pdf/2601.21259">The Role of Social Identity in Shaping Biases Against Minorities in Software Organizations.</a>
+          ACM Transactions on Software engineering & Methodologies (TOSEM),[Under Review].
+        </li>
+        <li class="pub-item">
+          T Dev, <strong>S Sultana</strong>, A Bosu.
+          <a href="https://arxiv.org/pdf/2507.20358">Beyond Binary Moderation: Identifying Fine-Grained Sexist and Misogynistic Behavior on GitHub with Large Language Models.</a>
+          International Symposium on Empirical Software Engineering and Measurement (ESEM), 2025.
+        </li>
+        <li class="pub-item">
+          <strong>S Sultana</strong>, J Sarker, F Israt, R Paul, A Bosu.
+          <a href="https://arxiv.org/abs/2311.08485">Automated Identification of Sexual Orientation and Gender Identity Discriminatory Texts from Issue Comments.</a>
+          ACM Transactions on Software engineering & Methodologies (TOSEM), 2025.
+        </li>
+        <li class="pub-item">
+          AK Turzo, <strong>S Sultana</strong>, A Bosu.
+          <a href="https://arxiv.org/pdf/2407.04159">From First Patch to Long-Term Contributor: Evaluating Onboarding Recommendations for OSS Newcomers.</a>
+          IEEE Transactions of Software Engineering (TSE), 2025.</span>
+        </li>
+        <li class="pub-item">
+          J Sarker, <strong>S Sultana</strong>, S R. Wilson, A Bosu.
+          <a href="https://arxiv.org/pdf/2210.00139.pdf">ToxiSpanSE: An Explainable Toxicity Detection in Code Review Comments</a>
+          International Symposium on Empirical Software Engineering and Measurement (ESEM), 2023.</span>
+        </li>
+        <li class="pub-item">
+          <strong>S Sultana</strong>, AK Turzo, A Bosu.
+          <a href="https://arxiv.org/pdf/2210.00139.pdf">Code Reviews in Open Source Projects: How Do Gender Biases Affect Participation and Outcomes?</a>
+          Empirical Software Engineering (EMSE), 2023.</span>
+        </li>
+      </ul>
+
+      <p class="pub-group-title">Short Papers &amp; Posters</p>
+      <ul class="pub-list">
+        <li class="pub-item">
+          <strong>S Sultana</strong>, MB Kali.
+          <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=uPqYflMAAAAJ&citation_for_view=uPqYflMAAAAJ:ufrVoPGSRksC">Exploring ChatGPT for Identifying Sexism in the Communication of Software Developers.</a>
+          17th International Conference on PErvasive Technologies Related to Assistive Environments (PETRA), 2024.
+        </li>
+        <li class="pub-item">
+          <strong>S Sultana</strong>, G Uddin, A Bosu.
+          <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=uPqYflMAAAAJ&citation_for_view=uPqYflMAAAAJ:eQOLeE2rZwMC">Assessing the Influence of Toxic and Gender Discriminatory Communication on Perceptible Diversity in OSS Projects.</a>
+          21st International Conference on Mining Software Repositories (MSR), Registered Report Track, 2024.
+        </li>
+        <li class="pub-item">
+          <strong>S Sultana</strong>.
+          <a href="https://drive.google.com/file/d/1eS-Vadm1Tqp05gNqlkLobktetaLFBotU/view?usp=sharing">Identification and Mitigation of Gender Biases to Promote Diversity and Inclusion among Open Source Communities.</a>
+          Doctoral Symposium, 37th IEEE/ACM International Conference on Automated Software Engineering (ASE), 2022.
+        </li>
+        <li class="pub-item">
+          <strong>S Sultana</strong>.
+          <a href="https://drive.google.com/file/d/132prQ2bFG4hOoMKCH1W1jw_I9uL5dqAB/view?usp=sharing">Identifying Sexism and Misogyny in Pull Request Comments.</a>
+          Student Research Competition, 37th IEEE/ACM International Conference on Automated Software Engineering (ASE), 2022.
+        </li>
+        <li class="pub-item">
+          <strong>S Sultana</strong>, J Sarker, A Bosu.
+          <a href="https://dl.acm.org/doi/pdf/10.1145/3475716.3484189">A Rubric to Identify Misogynistic and Sexist Texts from Software Developer Communications.</a>
+          Emerging Results and Vision paper, 15th ACM/IEEE International Symposium on Empirical Software Engineering and Measurement (ESEM), 2021.
+        </li>
+        <li class="pub-item">
+          <strong>S Sultana</strong>, A Bosu.
+          <a href="https://arxiv.org/pdf/2108.07774.pdf">Are Code Review Processes Influenced by the Genders of the Participants?</a>
+          Registered Report, 37th International Conference on Software Maintenance and Evolution (ICSME), 2021.
+        </li>
+        <li class="pub-item">
+          <strong>S Sultana</strong>, LA Cavaletto, A Bosu.
+          <a href="https://arxiv.org/pdf/2107.00212.pdf">Identifying the Prevalence of Gender Biases among the Computing Organizations.</a>
+          8th ACM Celebration of Women in Computing: womENcourage, 2021.
+        </li>
+        <li class="pub-item">
+          Dey R., <strong>Sultana S.</strong>, Razi A., Wisniewski P.J.
+          <a href="https://dl.acm.org/doi/fullHtml/10.1145/3334480.3382900">Exploring Smart Home Device Use by Airbnb Hosts.</a>
+          CHI Conference on Human Factors in Computing Systems Extended Abstracts, 2020.
+        </li>
+      </ul>
+    </section>
+
+    <!-- Research Projects -->
+    <section id="projects">
+      <h2 class="section-title">Research Projects</h2>
+      <div class="project-list">
+
+        <div class="project-card">
+          <h3>Analyzing Toxicity and Gender Bias Impact on OSS Diversity</h3>
+          <p> We are currently gathering GitHub dataset of pull requests and issue comments 
 				to explore the effects of toxic and gender-biased content on diversity in gender, ethnicity, and tenure. After that, using two state-of-the-art SE domain-specific toxicity
 				and gender derogatory detection tools, we will automatically identify toxic and gender discriminatory texts and will train multivariate regression models, where three diversity indices measured
 				using the Blau/Simpson index would be dependents, and the ratio of toxic /gender discriminatory texts would be one of the independents. To account for confounding factors, we will use various
 				project characteristics such as the age of a project, the number of contributors, the number of total commits, the number of issues, the number of releases, the number of pull requests, and if the project
 				has a code of conduct, as independents. We will assess the association between perceptible diversity and
-				the prevalence of toxicity /gender-derogatory texts using regression coefficients and their significance (i.e., p-value <0.05).
-				<a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=uPqYflMAAAAJ&citation_for_view=uPqYflMAAAAJ:eQOLeE2rZwMC">[MSR'24]</a>
-				
-				<li> <font size="4"> <strong>Investigating LLMs for Detecting Sexist Content: </strong> We are assessing ChatGPT's capability to detect various forms of gender-based derogatory language. 
+				the prevalence of toxicity /gender-derogatory texts using regression coefficients and their significance (i.e., p-value <0.05).</p>
+          <div class="project-links">
+            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=uPqYflMAAAAJ&citation_for_view=uPqYflMAAAAJ:eQOLeE2rZwMC">MSR'24</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>Investigating LLMs for Detecting Sexist Content</h3>
+          <p>We are assessing ChatGPT's capability to detect various forms of gender-based derogatory language. 
 				As an exploratory study, we collected a dataset from a previous study where the authors identified instances of gender-based maternal insults, commonly known as "mom jokes" and stereotypical remarks 
 				about women in an instant messaging chat environment. Utilizing the ChatGPT API, we sought to determine whether these comments could be accurately identified as mom jokes or stereotyping using both 
 				zero-shot and one-shot approaches. Our investigation has yielded encouraging findings regarding ChatGPT’s capacity to recognize sexist remarks. Specifically, we found that this model successfully 
 				identified 98.2% of texts containing maternal insults and 71.12% of texts containing stereotyping as positive instances. Hence, we can conclude that ChatGPT has demonstrated promising results in 
-				identifying specific forms of sexism.
-				<a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=uPqYflMAAAAJ&citation_for_view=uPqYflMAAAAJ:ufrVoPGSRksC">[PETRA'24]</a>
-				
-				<li> <font size="4"> <strong>Examining Gender Bias Among Software Industry Professionals : </strong> Based on the Social Identity Theory (SIT) framework, we selected four dimensions of biases for 
+				identifying specific forms of sexism.</p>
+          <div class="project-links">
+            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=uPqYflMAAAAJ&citation_for_view=uPqYflMAAAAJ:ufrVoPGSRksC">PETRA'24</a>
+            <a href="https://arxiv.org/pdf/2507.20358">ESEM'25</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>Examining Gender Bias Among Software Industry Professionals</h3>
+          <p>Based on the Social Identity Theory (SIT) framework, we selected four dimensions of biases for 
 				this study: bias in career development, bias in task selection, unwanted attention, and identity attacks. Through a vignette-based survey study, we investigated to determine the frequency of these biases, 
 				understand the association between demographic factors and being victims, explore the consequences of biases, and uncover the motivations behind biased behaviors. Our findings suggest that bias in career 
 				development and task selection are the two most prevalent among the four dimensions examined. More than two-thirds of the victims encounter biases multiple times.  Demographic factors such as age, years 
 				of development experience, project experience, race, and location, in addition to gender, influence the likelihood of being a bias victim. Women are more than three times more likely than men to become 
-				victims of a bias. Additionally, workplace culture, along with stereotypical beliefs about women, often influences individuals to make biased decisions. 
-				<a href="https://arxiv.org/pdf/2107.00212.pdf">[womEncourage'24]</a>
-				
-				<li> <font size="4"> <strong>Automated Tool for Identifying SGID Content: </strong> Developed a rubric and annotated a dataset of 11,007 GitHub pull requests and issue comments to build a tool 
+				victims of a bias. Additionally, workplace culture, along with stereotypical beliefs about women, often influences individuals to make biased decisions.</p>
+          <div class="project-links">
+            <a href="https://arxiv.org/pdf/2107.00212.pdf">womEncourage'24</a>
+            <a href="https://arxiv.org/pdf/2601.21259">TOSEM (Under Review)</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>Automated Tool for Identifying SGID Content</h3>
+          <p>Developed a rubric and annotated a dataset of 11,007 GitHub pull requests and issue comments to build a tool 
 				automatically identifying sexual and gender identity-based derogatory content. SGID4SE incorporates six preprocessing steps and ten state-of-the-art algorithms and implements six different strategies
 				to improve the performance of the minority class. We empirically evaluated each strategy and identified an optimum configuration for each algorithm. In our ten-fold cross-validation-based evaluations,
 				a BERT-based model boosts the best performance with 85.9% precision, 80.0% recall, and 82.9% F1-Score for the SGID class. This model achieves 95.7% accuracy and 80.4% Matthews Correlation Coefficient. 
-				Our dataset and tool establish a foundation for further research in this direction. <a href="https://github.com/WSU-SEAL/misogynistic-rubric"> [Rubric]</a> <a href="https://github.com/WSU-SEAL/SGID4SE">[SGID4SE tool]</a>
-				<a href="https://dl.acm.org/doi/abs/10.1145/3475716.3484189">[ESEM'21]</a> <a href="https://drive.google.com/file/d/132prQ2bFG4hOoMKCH1W1jw_I9uL5dqAB/view">[ASE'22]</a> <a href="https://arxiv.org/abs/2311.08485">[TOSEM'25]</a>
-				
-				<li> <font size="4"> <strong>Gender Bias in OSS Code Review: </strong> To identify whether the outcomes of participation in code reviews (or pull requests) are influenced by the gender of a developer, 
+				Our dataset and tool establish a foundation for further research in this direction.</p>
+          <div class="project-links">
+            <a href="https://github.com/WSU-SEAL/misogynistic-rubric">Rubric</a>
+            <a href="https://github.com/WSU-SEAL/SGID4SE">SGID4SE</a>
+            <a href="https://dl.acm.org/doi/abs/10.1145/3475716.3484189">ESEM'21</a>
+            <a href="https://drive.google.com/file/d/132prQ2bFG4hOoMKCH1W1jw_I9uL5dqAB/view">ASE'22</a>
+            <a href="https://arxiv.org/abs/2311.08485">TOSEM'25</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>Gender Bias in OSS Code Review</h3>
+          <p>To identify whether the outcomes of participation in code reviews (or pull requests) are influenced by the gender of a developer, 
 				we conducted regression analysis on data of pull request approvals, review times, and reviewer participation from 1,010 GitHub and Gerrit projects divided into 14 datasets. Our results find significant 
 				gender biases during code acceptance and significant differences between men and women in terms of code review intervals, with women encountering longer delays than men in three cases and the opposite in 
 				seven. Moreover, our results indicate reviewer selection as one of the most gender-biased aspects, with  12 out of 14 datasets exhibiting bias. Since most of the review assignments are based on invitations, 
-				this result suggests possible affinity biases among the developers. <a href="https://github.com/WSU-SEAL/EMSE-gender-code-review">[Replication package]</a>
-				<a href="https://arxiv.org/pdf/2108.07774.pdf">[ICSME'21]</a> <a href="https://link.springer.com/article/10.1007/s10664-023-10324-9">[EMSE'23]</a> 
-				
-				<li> <font size="4"> <strong>Studying Smart Home Device Use by Airbnb Hosts:  </strong>  An increasing number of Airbnb hosts are using smart home devices to manage their properties; as a result, 
+				this result suggests possible affinity biases among the developers.</p>
+          <div class="project-links">
+            <a href="https://github.com/WSU-SEAL/EMSE-gender-code-review">Replication</a>
+            <a href="https://arxiv.org/pdf/2108.07774.pdf">ICSME'21</a>
+            <a href="https://link.springer.com/article/10.1007/s10664-023-10324-9">EMSE'23</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>Smart Home Device Use by Airbnb Hosts</h3>
+          <p>An increasing number of Airbnb hosts are using smart home devices to manage their properties; as a result, 
 				Airbnb guests are expressing concerns about their privacy. To reconcile the tensions between hosts and guests, we interviewed 10 Airbnb hosts to understand what smart home devices they use, for what purposes, 
 				their concerns, and their unmet needs regarding smart home device usage. Overall, hosts used smart home devices to give remote access to their home to guests and safeguard their investment properties against misuse. 
-				They were less concerned about guest privacy and felt that smart home devices provided unique value to guests and, thus, a competitive advantage over other Airbnb properties.
-				<a href="https://github.com/Sayma23/Airbnb-CHI2020">[Replication package]</a> <a href="https://dl.acm.org/doi/fullHtml/10.1145/3334480.3382900">[CHI'20]</a>
-		         
-				</div>
-								</div>
-							</div>
-							
-						</div> 
-					</div>
-				</div>
-					
-				
-			</section>
-			
-			</div>
-		
-		
-			
-			<div class="container-fluid p-0" id="colorlib-main">
-			
-			<section class="colorlib-experience" data-section="experience">
-			<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="col-md-12">
-									<div class="about-desc">
-			<h2><font size="5"> <strong>Experience </strong> </font></h2>
-			<h6><font size="4" style="color.black">Teaching Experience </font> </h6> 
-			 <li> <font size="4">CSC 4996 (Senior Capstone Project): Fall 2022, Winter 2024. </font></li> 
-			 
-			  <li> <font size="4">CSC 4421 (Computer Operating Systems Lab): Winter 2022, Winter 2023, Fall 2023. </font></li> 
-			  
-			  <li> <font size="4">CSC 2201 (Computer Science 2 Lab): Spring/Summer 2022 </font></li> 
-			  
-			   <li> <font size="4">CSC 2200 (Computer Science 2 ): Spring/Summer 2021, Spring/Summer 2022. </font></li> 
-			   
-			    <li> <font size="4">CSC 1101 (Problem Solving & Programming Lab): Fall 2020, Winter 2021, Spring/Summer 2021, Fall 2021, Spring/Summer 2023.</font></li> 
-			    
-			    <li> <font size="4">CSC 1100 (Problem Solving & Programming ): Spring/Summer 2023. </font></li> 
-			 
-			 <br>
-			
-		         <h6><font size="4" style="color.black">Professional Experience</font> </h6> 
-		         
-		         <li> <font size="4"> Software Engineer Intern (Summer 2024), Meta, Menlo Park, CA, USA </font></li> 
-				<li> <font size="4"> Software Engineer ( March 2017- April 2019), <a href= "https://www.revesoft.com/"> Reve Systems </a>, Dhaka, Bangladesh</font></li> 
-		
-				</div>
-								</div>
-							</div>
-							
-						</div> 
-					</div>
-				</div>
-					
-				
-			</section>
-			
-			</div>
+				They were less concerned about guest privacy and felt that smart home devices provided unique value to guests and, thus, a competitive advantage over other Airbnb properties.</p>
+          <div class="project-links">
+            <a href="https://github.com/Sayma23/Airbnb-CHI2020">Replication</a>
+            <a href="https://dl.acm.org/doi/fullHtml/10.1145/3334480.3382900">CHI'20</a>
+          </div>
+        </div>
 
+      </div>
+    </section>
 
+    <!-- Experience -->
+    <section id="experience">
+      <h2 class="section-title">Experience</h2>
 
+      <p class="exp-group-title">Professional Experience</p>
+      <ul class="exp-list">
+        <li class="exp-item">
+          <strong>Software Engineer Intern</strong> &nbsp;·&nbsp; Meta, Menlo Park, CA, USA &nbsp;·&nbsp; Summer 2024
+        </li>
+        <li class="exp-item">
+          <strong>Software Engineer</strong> &nbsp;·&nbsp; <a href="https://www.revesoft.com/">Reve Systems</a>, Dhaka, Bangladesh &nbsp;·&nbsp; March 2017 – April 2019
+        </li>
+      </ul>
 
+      <p class="exp-group-title" style="margin-top:1.25rem;">Teaching Experience</p>
+      <ul class="exp-list">
+        <li class="exp-item"><strong>CSC 4996</strong> Senior Capstone Project &nbsp;·&nbsp; Fall 2022, Winter 2024</li>
+        <li class="exp-item"><strong>CSC 4421</strong> Computer Operating Systems Lab &nbsp;·&nbsp; Winter 2022, Winter 2023, Fall 2023</li>
+        <li class="exp-item"><strong>CSC 2201</strong> Computer Science 2 Lab &nbsp;·&nbsp; Spring/Summer 2022</li>
+        <li class="exp-item"><strong>CSC 2200</strong> Computer Science 2 &nbsp;·&nbsp; Spring/Summer 2021, Spring/Summer 2022</li>
+        <li class="exp-item"><strong>CSC 1101</strong> Problem Solving &amp; Programming Lab &nbsp;·&nbsp; Fall 2020, Winter 2021, Spring/Summer 2021, Fall 2021, Spring/Summer 2023</li>
+        <li class="exp-item"><strong>CSC 1100</strong> Problem Solving &amp; Programming &nbsp;·&nbsp; Spring/Summer 2023</li>
+      </ul>
+    </section>
 
-			<div class="container-fluid p-0" id="colorlib-main">
+    <!-- News -->
+    <section id="news">
+      <h2 class="section-title">News</h2>
+      <ul class="news-full-list">
+        <li class="news-full-item">
+          <i class="fas fa-users"></i>
+          <span>Joined programme committee of <a href="https://conf.researchr.org/track/icse-2025/icse-2025-artifact-evaluation">ICSME 2026, Registered Report Track</a></span>
+        </li>
+        <li class="news-full-item">
+          <i class="fas fa-users"></i>
+          <span>Joined programme committee of <a href="https://conf.researchr.org/track/icse-2025/icse-2025-artifact-evaluation">LLMTrust 2026</a></span>
+        </li>
+        <li class="news-full-item">
+          <i class="fas fa-users"></i>
+          <span>Joined programme committee of <a href="https://conf.researchr.org/track/icse-2025/icse-2025-artifact-evaluation">MSR 2026</a></span>
+        </li>
+        <li class="news-full-item">
+          <i class="fas fa-users"></i>
+          <span>Joined programme committee of <a href="https://conf.researchr.org/track/icse-2025/icse-2025-artifact-evaluation">ICSE 2026 Artifact Evaluation Track</a></span>
+        </li>
+        <li class="news-full-item">
+          <i class="fas fa-paper-plane"></i>
+          <span>Paper accepted at <a href="https://www.petrae.org/docs/petra24-program.pdf">TOSEM 2025</a></span>
+        </li>
+        <li class="news-full-item">
+          <i class="fas fa-paper-plane"></i>
+          <span>Paper accepted at <a href="https://www.petrae.org/docs/petra24-program.pdf">ESEM 2025</a></span>
+        </li>
+        <li class="news-full-item">
+          <i class="fas fa-paper-plane"></i>
+          <span>On June 4th of 2025, I defended my dissertation. I am Dr. Sultana now!</span>
+        </li>
+        <li class="news-full-item">
+          <i class="fas fa-users"></i>
+          <span>Joined programme committee of <a href="https://conf.researchr.org/track/icse-2025/icse-2025-artifact-evaluation">ICSE 2025 Artifact Evaluation Track</a></span>
+        </li>
+        <li class="news-full-item">
+          <i class="fas fa-paper-plane"></i>
+          <span>Paper accepted at <a href="https://2024.msrconf.org/track/msr-2024-registered-reports">MSR 2024, Registered Report Track</a></span>
+        </li>
+        <li class="news-full-item">
+          <i class="fas fa-paper-plane"></i>
+          <span>Paper accepted at <a href="https://www.petrae.org/docs/petra24-program.pdf">PETRA 2024</a></span>
+        </li>
+        <li class="news-full-item">
+          <i class="fas fa-chalkboard-teacher"></i>
+          <span>Presented work at <a href="https://conf.researchr.org/home/fse-2023">ESEC/FSE 2023</a></span>
+        </li>
+      </ul>
+    </section>
 
+    <!-- Service -->
+    <section id="service">
+      <h2 class="section-title">Service</h2>
+      <ul class="exp-list">
+        <li class="exp-item">Reviewer, 42nd International Conference on Software Maintenance &amp; Evaluation (ICSME 2026), Registered Report Track</li>
+        <li class="exp-item">Reviewer, 1st International Workshop on Software Engineering for and with Trustworthy LLMs (LLMTrust 2026)</li>
+        <li class="exp-item">Junior Program Chair, Mining Software Repositories (MSR) 2025, 2023</li>
+        <li class="exp-item">Reviewer, 47th International Conference on Software Engineering (ICSE) 2025 – Artifact Evaluation Track</li>
+        <li class="exp-item">Reviewer, Empirical Software Engineering Journal (EMSE), 2024</li>
+        <li class="exp-item">Student Volunteer, ACM Joint European Software Engineering Conference on Foundations of Software Engineering (ESEC/FSE) 2021, 2023</li>
+        <li class="exp-item">Student Volunteer, IEEE/ACM International Conference on Automated Software Engineering (ASE) 2022, 2021</li>
+        <li class="exp-item">Instructor of Machine Learning &amp; Data Science courses, Community Engagement &amp; K-12 Outreach Program, College of Engineering, Wayne State University, Summer 2021</li>
+        <li class="exp-item">Additional Reviewer, 44th International Conference on Software Engineering (ICSE) 2021 – Tool Demonstrations Track</li>
+        <li class="exp-item">Student Volunteer, 43rd International Conference in Software Engineering (ICSE) 2021</li>
+        <li class="exp-item">Reviewer, Website Design Competition for Middle and High School Girls, Michigan Council of Women in Technology (MCWT), 2020</li>
+      </ul>
+    </section>
 
-			<section class="colorlib-contact" data-section="contact">
-				<div class="colorlib-narrow-content">
-					
+    <!-- Contact -->
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <div class="label">Email</div>
+            <div class="value"><a href="mailto:ssultana1@tulane.edu">ssultana1@tulane.edu</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <div class="label">Office</div>
+            <div class="value">Paul Hall, Suite 518<br>New Orleans, LA 70118</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-			<h2><font size="5"> <strong>Contact </strong> </font></h2>
-			<div class="colorlib-narrow-content">
-			<div class="row">
-						
-							<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-								
-									<div class="about-desc">
-								    <p><font size="4">Email: sayma@wayne.edu</font></p>
-				 
-				 <p><font size="4"> Office: 5057 Woodward Ave.,
-				 Suite# 3105, Detroit, MI 48202<font size="4"> </p>
-									</div>
-							
-							</div>
-						
-					</div>
-				</div>
-			</div>
-									
-									
-									
-		
-			</section>
-			
-			</div>
-		</div><!-- end:colorlib-main -->
-	</div><!-- end:container-wrap -->
-	</div><!-- end:colorlib-page -->
+  </main>
+</div><!-- end #wrapper -->
 
-	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- Flexslider -->
-	<script src="js/jquery.flexslider-min.js"></script>
-	<!-- Owl carousel -->
-	<script src="js/owl.carousel.min.js"></script>
-	<!-- Counters -->
-	<script src="js/jquery.countTo.js"></script>
-	
-	
-	<!-- MAIN JS -->
-	<script src="js/main.js"></script>
+<script>
+  // Mobile nav toggle
+  const toggle = document.getElementById('nav-toggle');
+  const sidebar = document.getElementById('sidebar');
+  toggle.addEventListener('click', () => sidebar.classList.toggle('open'));
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => sidebar.classList.remove('open'));
+  });
 
-	</body>
-	
-	</html>
+  // Active nav highlight on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  function setActive() {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+    });
+    navLinks.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+    });
+  }
+  window.addEventListener('scroll', setActive, { passive: true });
+  setActive();
+</script>
+
+</body>
+</html>
